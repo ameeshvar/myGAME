@@ -5,7 +5,30 @@
 <script src="./p5.play.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="utf-8">
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-database.js"></script>
 
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCY3tH1wnUqESyGrAdMnm2IN_sG62vrjEs",
+    authDomain: "jumanji-fd9ca.firebaseapp.com",
+    databaseURL: "https://jumanji-fd9ca.firebaseio.com",
+    projectId: "jumanji-fd9ca",
+    storageBucket: "jumanji-fd9ca.appspot.com",
+    messagingSenderId: "419941455367",
+    appId: "1:419941455367:web:a3018e0ca91d5da9fa3ca2"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+<script src="js/form.js"></script>
+<script src="js/game.js"></script>
+<script src="js/player.js"></script>
   </head>
   <body>
       <script src="sketch.js"></script>
