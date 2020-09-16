@@ -13,7 +13,7 @@ class Form {
     }
     
     display(){
-        this.title.html("car racing game")
+        this.title.html("warfare")
         this.title.position(displayWidth/2-50,0)
         this.input.position(displayWidth/2-40,displayHeight/2-80)
         this.button.position(displayWidth/2,displayHeight/2)
@@ -29,7 +29,7 @@ class Form {
             player.playerCount=playerCount
             player.updateplayerCount(playerCount);
             player.update()
-            this.greeting.html("hello "+ player.name)
+            this.greeting.html("WELCOME "+ player.name)
             this.greeting.position(displayWidth/2,displayHeight/4)
         })
       this.restart.mousePressed(()=>{

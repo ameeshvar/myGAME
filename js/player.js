@@ -4,6 +4,7 @@ class Player {
     this.name=0
     this.playerCount=0
     this.rank=0
+    this.lifetime=3
     }
     getCount(){
     var playerCountRef=database.ref("playerCount");
@@ -19,7 +20,8 @@ class Player {
      var playerIndex="Players/player"+this.playerCount
     database.ref(playerIndex).set({
         name:this.name,
-        distance:this.distance
+        distance:this.distance,
+        lifetime:this.lifetime
 
     })
 }
