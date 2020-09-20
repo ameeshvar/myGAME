@@ -25,32 +25,61 @@ class Game {
          }
          form=new Form();
        form.display();
-       console.log("help")
-    }}
+    }
+    player1=createSprite(230,700)
+    player2=createSprite(1360,700)
+    player1.addImage("player1IMG",player1IMG)
+    player2.addImage("player2IMG",player2IMG)
+  playerArray=[player1 , player2]
+  bg=createSprite(displayWidth/2,displayHeight/2)
+  bg.addImage("bgIMG",bgIMG)
+  
+}
+
     play(){
-        form.hide()
+       // form.hide()
         text("game start",100,100)
         Player.getAllPlayerInfo()
-        player.getCarsAtEnd()
+       // player.getplayersAtEnd()
         if(allPlayers!= undefined ){
-            background("#c68767")
-            image(trackImg,0,-displayHeight*4,displayWidth,displayHeight*5)
+            //background()
+            var xposition=100
+            var yPosition=80
+            
+            for(var j =1;j<=allPlayers.player1.lifetime;j=j+1){
+                image(lifetimeIMG,xposition,yPosition,50,50)
+                xposition=xposition+50
+            
+                console.log(allPlayers.player1.lifetime)
+            
+            }
+            yPosition=yPosition+70
+            xposition=100
+            for(var j =1;j<=allPlayers.player2.lifetime;j=j+1){
+                image(lifetime2IMG,xposition,yPosition,50,50)
+                xposition=xposition+50
+                
+            
+                console.log(allPlayers.player1.lifetime)
+            
+            }
 
            var index=0
            var x=265
            var y=0
             //var displayPosition=(130)
             for(var i in allPlayers){
+            
                 index=index+1
                 x=x+200
                 y=displayHeight-allPlayers[i].distance
-                carArrays[index-1].x=x
-                carArrays[index-1].y=y
+                playerArray[index-1].x=x
+                playerArray[index-1].y=y
                
                 if(index == player.playerCount){
-                    carArrays[index-1].shapeColor="red"
+                    playerArray[index-1].shapeColor="red"
                     camera.position.x=displayWidth/2
-                    camera.position.y=carArrays[index-1].y
+                    camera.position.y=playerArray[index-1].y
                     ellipse(x,y,60,60)
                 }
                  
@@ -58,23 +87,13 @@ class Game {
             }
 
         }
-        if(keyDown(UP_ARROW)&&player.playerCount!= null){
-            player.distance=player.distance+50
-            player.update()
-
-        }
-
-        if (player.distance==4100){
-           gameState=2
-           rank=rank+1
-           player.rank=rank
-           Player.updateCarAtEnd(player.rank)
-        }
+     
+     
         drawSprites();
 
     }
     end(){
        game.updateGameState(2)  
-       alert(player.rank)
+       
     }
 }
